@@ -17,7 +17,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".biz_info"
-            android:label="@string/title_activity_about_app"
+            android:label="Business Information"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".about_credits" />
