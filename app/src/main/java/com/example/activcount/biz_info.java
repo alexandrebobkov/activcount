@@ -3,6 +3,7 @@ package com.example.activcount;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.TextView;
@@ -13,9 +14,14 @@ import android.os.Bundle;
 
 public class biz_info extends AppCompatActivity {
 
-    private Button btn_submit;
+    // Preferences variables
     private SharedPreferences saved_info;
+    public static final String PREFS_NAME = "activcountVars";
+
+    private Button btn_submit;
     private EditText operating_name;
+    String biz_oper_name;   // Business operating name
+    int bus_num;            // Business number
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,45 +30,31 @@ public class biz_info extends AppCompatActivity {
 
         btn_submit = (Button) findViewById(R.id.btn_submit);
         operating_name = (EditText) findViewById(R.id.biz_operating_name);
-        saved_info = getSharedPreferences("biz_operating_name", MODE_PRIVATE);
-        //btn_submit.setOnClickListener(submitButtonListener);
 
+        // Load business operating name from preferences file.
+        saved_info = getSharedPreferences(PREFS_NAME, 0);
+        biz_oper_name = saved_info.getString("biz_oper_name", biz_oper_name);
+
+        // Display business operating name, if any, in textview.
         TextView textElement = (TextView) findViewById(R.id.biz_operating_name);
-        String modifiedText;
-        modifiedText = textElement.getText().toString();
-        modifiedText = modifiedText + "Ltd.";
-        textElement.setText(modifiedText);
+        if (biz_oper_name == null)
+            textElement.setText("enter Business Operating Name");
+        else
+            textElement.setText(""+biz_oper_name);
     }
 
     public void submitBizInfo(View view) {
         TextView label = (TextView) findViewById(R.id.biz_operating_name);
         EditText name = (EditText) findViewById(R.id.biz_operating_name);
 
-        saved_info = getSharedPreferences("prefID", MODE_PRIVATE);
-        SharedPreferences.Editor editor = saved_info.edit();
-        editor.putString("nameKey", name.getText().toString());
-        editor.apply();
-
         // change the status message
         EditText oper_name = (EditText) findViewById(R.id.biz_operating_name);  // define which object we refer to
         String business_name = oper_name.getText().toString();                  // define variable and get its value
+        saved_info = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = saved_info.edit();
+        editor.putString("biz_oper_name", name.getText().toString());
+        editor.apply();
         TextView status = (TextView) findViewById(R.id.submit_status);          // define which object we refer to
         status.setText(business_name + ": Submitted");                          // set the status message
     }
-/*
-    private void makeTag(String tag) {
-        String or = saved_info.getString(tag,null);
-        SharedPreferences.Editor preferencesEdior = operating_name.edit();
-        preferencesEdior.putString(tag,null);
-        preferencesEdior.commit();
-    }
-    public View.OnClickListener submitButtonListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if(operating_name.getText().length()>0) {
-                makeTag(operating_name.getText().toString());
-                ((InputMethodManager)getSystemService(Content.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(operating_name.getWindowToken(),0);
-            }
-        }
-    };*/
 }
