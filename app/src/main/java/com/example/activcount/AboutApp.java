@@ -1,3 +1,8 @@
+/*
+    Author: Alexandre Bobkov
+    Company: Alexandre Comptabilite Specialise Ltee.
+*/
+
 package com.example.activcount;
 
 import android.os.Bundle;

@@ -1,7 +1,11 @@
 /*
+    Date Created:       October 15, 2019
+    Last time updated:  October 19, 2019
+
     Author: Alexandre Bobkov
     Company: Alexandre Comptabilite Specialise Ltee.
-    Program purpose: To display key accounting information and financiel overview.
+
+    Program purpose: To display key accounting information and financial overview.
 */
 
 package com.example.activcount;
@@ -46,7 +50,5 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, biz_info.class);
         startActivity(intent);
     }
-    public void submitBizInfo(View view) {
-
-    }
+    public void submitBizInfo(View view) {    }
 }

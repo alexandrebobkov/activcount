@@ -6,6 +6,291 @@
     android:layout_height="match_parent"
     tools:context=".biz_info">
 
+    <TextView
+        android:id="@+id/ni"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="Net Income"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oe" />
+
+    <EditText
+        android:id="@+id/val_ni"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:duplicateParentState="false"
+        android:enabled="false"
+        android:ems="10"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ni"
+        app:layout_constraintTop_toTopOf="@+id/ni" />
+
+    <EditText
+        android:id="@+id/val_np"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:duplicateParentState="false"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/np"
+        app:layout_constraintTop_toTopOf="@+id/np" />
+
+    <TextView
+        android:id="@+id/np"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="Net Profit"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cogs" />
+
+    <EditText
+        android:id="@+id/val_coss"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/cogs"
+        app:layout_constraintTop_toBottomOf="@+id/val_rev" />
+
+    <TextView
+        android:id="@+id/rev"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="REV"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lta" />
+
+    <EditText
+        android:id="@+id/val_rev"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/rev"
+        app:layout_constraintTop_toBottomOf="@+id/val_lta" />
+
+    <TextView
+        android:id="@+id/cogs"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="COSS"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rev" />
+
+    <EditText
+        android:id="@+id/val_oe"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/oe"
+        app:layout_constraintTop_toBottomOf="@+id/val_np" />
+
+    <TextView
+        android:id="@+id/oe"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="OE"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/np" />
+
+    <TextView
+        android:id="@+id/ltl"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="LTL"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toStartOf="@+id/val_ltl"
+        app:layout_constraintTop_toBottomOf="@+id/stl" />
+
+    <EditText
+        android:id="@+id/val_ltl"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/val_stl" />
+
+    <TextView
+        android:id="@+id/stl"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="STL"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toStartOf="@+id/val_stl"
+        app:layout_constraintTop_toBottomOf="@+id/cl" />
+
+    <EditText
+        android:id="@+id/val_stl"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/val_cl" />
+
+    <EditText
+        android:id="@+id/val_cl"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fin_info" />
+
+    <TextView
+        android:id="@+id/cl"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="CL"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toStartOf="@+id/val_cl"
+        app:layout_constraintTop_toBottomOf="@+id/fin_info" />
+
+    <EditText
+        android:id="@+id/val_lta"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/lta"
+        app:layout_constraintTop_toBottomOf="@+id/val_sta" />
+
+    <TextView
+        android:id="@+id/lta"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="LTA"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sta" />
+
+    <TextView
+        android:id="@+id/sta"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="STA"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ca" />
+
+    <EditText
+        android:id="@+id/val_sta"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/sta"
+        app:layout_constraintTop_toBottomOf="@+id/val_sa" />
+
     <Button
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
@@ -20,17 +305,15 @@
 
     <TextView
         android:id="@+id/biz_info_001"
-        android:layout_width="126dp"
+        android:layout_width="match_parent"
         android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
         android:ems="8"
         android:enabled="true"
+        android:gravity="center"
         android:text="Operating Name"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/biz_operating_name" />
 
@@ -38,12 +321,11 @@
         android:id="@+id/biz_operating_name"
         android:layout_width="289dp"
         android:layout_height="56dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="text"
         android:text="@string/input_oper_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,5 +338,51 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/fin_info"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:enabled="true"
+        android:gravity="center|center_vertical"
+        android:text="Financial Ratios"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/biz_info_001" />
+
+    <TextView
+        android:id="@+id/ca"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="CA"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fin_info" />
+
+    <EditText
+        android:id="@+id/val_sa"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        app:layout_constraintStart_toEndOf="@+id/ca"
+        app:layout_constraintTop_toBottomOf="@+id/fin_info"
+        android:textSize="16sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
