@@ -6,14 +6,11 @@ package com.example.activcount;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.app.Activity;
 import android.os.Bundle;
 
 public class biz_info extends AppCompatActivity {
@@ -24,7 +21,7 @@ public class biz_info extends AppCompatActivity {
     // Variables
     String biz_oper_name;   // Business operating name
     int bus_num;            // Business number
-    float oper_rev, dc, profit, oper_exp, net_income;
+    float oper_rev, dc, profit, oper_exp, intexp, ebit, ebt, taxes, net_income;
 
     // UI items
     private Button btn_submit;
@@ -63,6 +60,18 @@ public class biz_info extends AppCompatActivity {
         EditText exp = (EditText) findViewById(R.id.val_oe);
         if (exp.length() != 0)
             oper_exp = Float.parseFloat(exp.getText().toString());
+        EditText text_ebit = (EditText) findViewById(R.id.val_ebit);
+        if (text_ebit.length() != 0)
+            ebit = Float.parseFloat(text_ebit.getText().toString());
+        EditText text_intexp = (EditText) findViewById(R.id.val_intexp);
+        if (text_intexp.length() != 0)
+            intexp = Float.parseFloat(text_intexp.getText().toString());
+        EditText text_ebt = (EditText) findViewById(R.id.val_ebt);
+        if (text_ebt.length() != 0)
+            ebt = Float.parseFloat(text_ebt.getText().toString());
+        EditText text_taxes = (EditText) findViewById(R.id.val_inctax);
+        if (text_taxes.length() != 0)
+            taxes = Float.parseFloat(text_ebt.getText().toString());
 
         // change the status message
         EditText oper_name = (EditText) findViewById(R.id.biz_operating_name);  // define which object we refer to
@@ -71,15 +80,23 @@ public class biz_info extends AppCompatActivity {
         SharedPreferences.Editor editor = saved_info.edit();
         editor.putString("biz_oper_name", name.getText().toString());
         editor.apply();
-        TextView status = (TextView) findViewById(R.id.submit_status);          // define which object we refer to
-        status.setText(business_name + ": Submitted");                          // set the status message
+        //TextView status = (TextView) findViewById(R.id.submit_status);          // define which object we refer to
+        //status.setText(business_name + ": Submitted");                          // set the status message
 
         profit = oper_rev - dc;
         EditText np = (EditText) findViewById(R.id.val_np);
         np.setText(Float.toString(profit));
 
-        net_income = profit - oper_exp;
-        EditText ni = (EditText) findViewById(R.id.val_ni);
-        ni.setText(Float.toString(net_income));
+        ebit = profit - oper_exp;
+        text_ebit.setText(Float.toString(ebit));
+
+        ebt = ebit - intexp;
+        text_ebt.setText(Float.toString(ebt));
+
+        net_income = ebt - taxes;
+        EditText text_ni = (EditText) findViewById(R.id.val_ni);
+        text_ni.setText(Float.toString(net_income));
+
+
     }
 }

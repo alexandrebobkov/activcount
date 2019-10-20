@@ -6,29 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".biz_info">
 
-    <TextView
-        android:id="@+id/ni"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:ems="10"
-        android:gravity="center_horizontal|center_vertical"
-        android:inputType="textPersonName"
-        android:maxEms="12"
-        android:maxLength="12"
-        android:text="Net Income"
-        android:textStyle="normal|bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oe" />
-
     <EditText
         android:id="@+id/val_ni"
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:layout_height="40dp"
         android:duplicateParentState="false"
-        android:enabled="false"
         android:ems="10"
+        android:enabled="false"
         android:gravity="bottom|center_horizontal"
         android:inputType="numberDecimal"
         android:numeric="decimal"
@@ -36,9 +20,143 @@
         app:layout_constraintStart_toEndOf="@+id/ni"
         app:layout_constraintTop_toTopOf="@+id/ni" />
 
+    <TextView
+        android:id="@+id/ni"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:ems="10"
+        android:gravity="center_horizontal|left|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="Net Income"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inctax" />
+
+    <TextView
+        android:id="@+id/inctax"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:gravity="center_horizontal|left|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="Income Taxes"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ebt" />
+
+    <EditText
+        android:id="@+id/val_inctax"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:duplicateParentState="false"
+        android:ems="10"
+        android:enabled="true"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/inctax"
+        app:layout_constraintTop_toBottomOf="@+id/ebt" />
+
+    <TextView
+        android:id="@+id/ebt"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:ems="10"
+        android:gravity="center_horizontal|left|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="EBT"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/int_exp" />
+
+    <EditText
+        android:id="@+id/val_ebt"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:duplicateParentState="false"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ebt"
+        app:layout_constraintTop_toBottomOf="@+id/val_intexp" />
+
+    <TextView
+        android:id="@+id/ebit"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:ems="10"
+        android:gravity="center_horizontal|left|center_vertical"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLength="12"
+        android:text="EBIT"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oe" />
+
+    <EditText
+        android:id="@+id/val_ebit"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:duplicateParentState="false"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ebit"
+        app:layout_constraintTop_toBottomOf="@+id/val_oe" />
+
+    <EditText
+        android:id="@+id/val_intexp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:duplicateParentState="false"
+        android:ems="10"
+        android:enabled="true"
+        android:gravity="bottom|center_horizontal"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/val_ebt"
+        app:layout_constraintTop_toBottomOf="@+id/val_ebit" />
+
+    <TextView
+        android:id="@+id/int_exp"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:autoText="false"
+        android:ems="10"
+        android:gravity="center_horizontal|left|center_vertical"
+        android:inputType="textPersonName"
+        android:text="Less: Interest Expense"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ebit" />
+
     <EditText
         android:id="@+id/val_np"
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:layout_height="40dp"
         android:duplicateParentState="false"
         android:editable="false"
@@ -53,12 +171,12 @@
 
     <TextView
         android:id="@+id/np"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
         android:ems="10"
-        android:gravity="center_horizontal|center_vertical"
+        android:gravity="center_horizontal|left|center_vertical"
         android:inputType="textPersonName"
         android:maxEms="12"
         android:maxLength="12"
@@ -75,22 +193,22 @@
         android:gravity="bottom|center_horizontal"
         android:inputType="numberDecimal"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/cogs"
+        app:layout_constraintEnd_toEndOf="@+id/val_np"
         app:layout_constraintTop_toBottomOf="@+id/val_rev" />
 
     <TextView
         android:id="@+id/rev"
-        android:layout_width="50dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:gravity="center_horizontal|center_vertical"
+        android:gravity="center_horizontal|left|center_vertical"
         android:inputType="textPersonName"
         android:maxEms="12"
         android:maxLength="12"
-        android:text="REV"
+        android:text="Revenues"
         android:textStyle="normal|bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lta" />
@@ -99,27 +217,26 @@
         android:id="@+id/val_rev"
         android:layout_width="60dp"
         android:layout_height="40dp"
-        android:layout_marginTop="32dp"
         android:ems="10"
         android:gravity="bottom|center_horizontal"
         android:inputType="numberDecimal"
         android:numeric="decimal"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/rev"
-        app:layout_constraintTop_toBottomOf="@+id/val_lta" />
+        app:layout_constraintEnd_toEndOf="@+id/val_coss"
+        app:layout_constraintTop_toTopOf="@+id/rev" />
 
     <TextView
         android:id="@+id/cogs"
-        android:layout_width="50dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:ems="10"
-        android:gravity="center_horizontal|center_vertical"
+        android:gravity="center_horizontal|left|center_vertical"
         android:inputType="textPersonName"
         android:maxEms="12"
         android:maxLength="12"
-        android:text="COSS"
+        android:text="Less: COGC"
         android:textStyle="normal|bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rev" />
@@ -133,21 +250,19 @@
         android:inputType="numberDecimal"
         android:numeric="decimal"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/oe"
+        app:layout_constraintEnd_toEndOf="@+id/val_ebit"
         app:layout_constraintTop_toBottomOf="@+id/val_np" />
 
     <TextView
         android:id="@+id/oe"
-        android:layout_width="50dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:ems="10"
-        android:gravity="center_horizontal|center_vertical"
+        android:gravity="center_horizontal|left|center_vertical"
         android:inputType="textPersonName"
-        android:maxEms="12"
-        android:maxLength="12"
-        android:text="OE"
+        android:text="Less: Expenses"
         android:textStyle="normal|bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/np" />
@@ -210,7 +325,6 @@
         android:id="@+id/val_cl"
         android:layout_width="60dp"
         android:layout_height="40dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
@@ -218,13 +332,12 @@
         android:numeric="decimal"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fin_info" />
+        app:layout_constraintTop_toTopOf="@+id/val_sa" />
 
     <TextView
         android:id="@+id/cl"
         android:layout_width="50dp"
         android:layout_height="40dp"
-        android:layout_marginTop="16dp"
         android:ems="10"
         android:gravity="center_horizontal|center_vertical"
         android:inputType="textPersonName"
@@ -233,7 +346,7 @@
         android:text="CL"
         android:textStyle="normal|bold"
         app:layout_constraintEnd_toStartOf="@+id/val_cl"
-        app:layout_constraintTop_toBottomOf="@+id/fin_info" />
+        app:layout_constraintTop_toTopOf="@+id/val_cl" />
 
     <EditText
         android:id="@+id/val_lta"
@@ -303,57 +416,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/biz_info_001"
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:ems="8"
-        android:enabled="true"
-        android:gravity="center"
-        android:text="Operating Name"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/biz_operating_name" />
-
     <EditText
         android:id="@+id/biz_operating_name"
         android:layout_width="289dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="text"
         android:text="@string/input_oper_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/submit_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="Press Submit"
-        app:layout_constraintBottom_toTopOf="@+id/btn_submit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/fin_info"
-        android:layout_width="wrap_content"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:enabled="true"
-        android:gravity="center|center_vertical"
-        android:text="Financial Ratios"
-        android:textSize="18sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/biz_info_001" />
 
     <TextView
         android:id="@+id/ca"
@@ -370,19 +443,18 @@
         android:text="CA"
         android:textStyle="normal|bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fin_info" />
+        app:layout_constraintTop_toBottomOf="@+id/biz_operating_name" />
 
     <EditText
         android:id="@+id/val_sa"
         android:layout_width="60dp"
         android:layout_height="40dp"
-        android:layout_marginTop="16dp"
         android:ems="10"
         android:gravity="bottom|center_horizontal"
         android:inputType="numberDecimal"
         android:numeric="decimal"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/ca"
-        app:layout_constraintTop_toBottomOf="@+id/fin_info"
-        android:textSize="16sp" />
+        app:layout_constraintTop_toTopOf="@+id/ca" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
