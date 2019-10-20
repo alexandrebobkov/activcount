@@ -408,7 +408,7 @@
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="31dp"
+        android:layout_marginBottom="8dp"
         android:onClick="submitBizInfo"
         android:text="@string/button_submit"
         app:layout_constraintBottom_toBottomOf="parent"
