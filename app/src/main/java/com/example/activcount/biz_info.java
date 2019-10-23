@@ -19,7 +19,7 @@ public class biz_info extends AppCompatActivity {
     private SharedPreferences saved_info, s_rev;
     public static final String PREFS_NAME = "activcountVars";
     // Persistent variables
-    String biz_op_name, str_rev, str_coss, str_oe, str_intexp, str_inctax;   // Business operating name
+    String biz_op_name, str_rev, str_coss, str_oe, str_intexp, str_inctax;
     int bus_num;            // Business number
     float oper_rev, dc, profit, oper_exp, int_exp, ebit, ebt, taxes, net_income;
 
@@ -32,12 +32,12 @@ public class biz_info extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_biz_info);
 
-        btn_submit = (Button) findViewById(R.id.btn_submit);
-        rev = (EditText) findViewById(R.id.val_rev);
-        coss = (EditText) findViewById(R.id.val_coss);
-        exp = (EditText) findViewById(R.id.val_oe);
-        intexp = (EditText) findViewById(R.id.val_intexp);
-        inctax = (EditText) findViewById(R.id.val_inctax);
+        btn_submit  =   (Button) findViewById(R.id.btn_submit);
+        rev         =   (EditText) findViewById(R.id.val_rev);
+        coss        =   (EditText) findViewById(R.id.val_coss);
+        exp         =   (EditText) findViewById(R.id.val_oe);
+        intexp      =   (EditText) findViewById(R.id.val_intexp);
+        inctax      =   (EditText) findViewById(R.id.val_inctax);
 
         // Load business operating name from preferences file.
         saved_info = getSharedPreferences(PREFS_NAME, 0);
@@ -71,7 +71,6 @@ public class biz_info extends AppCompatActivity {
     public void submitBizInfo(View view) {
         TextView label = (TextView) findViewById(R.id.biz_operating_name);
         EditText name = (EditText) findViewById(R.id.biz_operating_name);
-
 
         if (rev.length() != 0)
             oper_rev = Float.parseFloat(rev.getText().toString());
