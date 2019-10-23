@@ -40,15 +40,13 @@ public class biz_info extends AppCompatActivity {
         inctax      =   (EditText) findViewById(R.id.val_inctax);
 
         // Load business operating name from preferences file.
-        saved_info = getSharedPreferences(PREFS_NAME, 0);
-        //saved_info = getSharedPreferences(PREFS_NAME, 1);
-        //s_rev = getSharedPreferences(PREFS_NAME, 1);
+        saved_info  = getSharedPreferences(PREFS_NAME, 0);
         biz_op_name = saved_info.getString("biz_oper_name", biz_op_name);
-        str_rev = saved_info.getString("oper_rev", str_rev);
-        str_coss = saved_info.getString("coss", str_coss);
-        str_oe = saved_info.getString("oe", str_oe);
-        str_intexp = saved_info.getString("intexp", str_intexp);
-        str_inctax = saved_info.getString("inctax", str_inctax);
+        str_rev     = saved_info.getString("oper_rev", str_rev);
+        str_coss    = saved_info.getString("coss", str_coss);
+        str_oe      = saved_info.getString("oe", str_oe);
+        str_intexp  = saved_info.getString("intexp", str_intexp);
+        str_inctax  = saved_info.getString("inctax", str_inctax);
 
         // Display business operating name, if any, in textview.
         TextView textElement = (TextView) findViewById(R.id.biz_operating_name);
@@ -68,48 +66,50 @@ public class biz_info extends AppCompatActivity {
             inctax.setText(str_inctax);
     }
 
+    // Save data entered by user.
     public void submitBizInfo(View view) {
         TextView label = (TextView) findViewById(R.id.biz_operating_name);
-        EditText name = (EditText) findViewById(R.id.biz_operating_name);
+        EditText name       = (EditText) findViewById(R.id.biz_operating_name);
+        EditText np         = (EditText) findViewById(R.id.val_np);
+        EditText text_ni    = (EditText) findViewById(R.id.val_ni);
+        EditText text_ebit  = (EditText) findViewById(R.id.val_ebit);
+        EditText text_ebt   = (EditText) findViewById(R.id.val_ebt);
 
+        // Get values entered by the user
+        // Revenues
         if (rev.length() != 0)
             oper_rev = Float.parseFloat(rev.getText().toString());
+        // Cost of Services Sold
         if (coss.length() != 0)
             dc = Float.parseFloat(coss.getText().toString());
+        // Operating Expenses
         if (exp.length() != 0)
             oper_exp = Float.parseFloat(exp.getText().toString());
-        EditText text_ebit = (EditText) findViewById(R.id.val_ebit);
+        // EBIT
         if (text_ebit.length() != 0)
             ebit = Float.parseFloat(text_ebit.getText().toString());
-
+        // Interest Expense
         if (intexp.length() != 0)
             int_exp = Float.parseFloat(intexp.getText().toString());
-        EditText text_ebt = (EditText) findViewById(R.id.val_ebt);
+        // EBT
         if (text_ebt.length() != 0)
             ebt = Float.parseFloat(text_ebt.getText().toString());
-
+        // Taxes
         if (inctax.length() != 0)
             taxes = Float.parseFloat(inctax.getText().toString());
-
-        profit = oper_rev - dc;
-        EditText np = (EditText) findViewById(R.id.val_np);
-        np.setText(Float.toString(profit));
-
-        ebit = profit - oper_exp;
-        text_ebit.setText(Float.toString(ebit));
-
-        ebt = ebit - int_exp;
-        text_ebt.setText(Float.toString(ebt));
-
-        net_income = ebt - taxes;
-        EditText text_ni = (EditText) findViewById(R.id.val_ni);
-        text_ni.setText(Float.toString(net_income));
+        // Perform calculations
+        profit = oper_rev - dc;                     // Calculate Net Profit
+        np.setText(Float.toString(profit));         // Display calculated value
+        ebit = profit - oper_exp;                   // Calculate EBIT
+        text_ebit.setText(Float.toString(ebit));    // Display calculated value
+        ebt = ebit - int_exp;                       // Calculate EBT
+        text_ebt.setText(Float.toString(ebt));      // Display calculated value
+        net_income = ebt - taxes;                       // Calculate Net Income
+        text_ni.setText(Float.toString(net_income));    // Display calculated value
 
         // Save values
         saved_info = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-
         SharedPreferences.Editor editor = saved_info.edit();
-
         editor.putString("biz_oper_name", name.getText().toString());
         editor.putString("oper_rev", Float.toString(oper_rev));
         editor.putString("coss", Float.toString(dc));
@@ -117,8 +117,5 @@ public class biz_info extends AppCompatActivity {
         editor.putString("intexp", Float.toString(int_exp));
         editor.putString("inctax", Float.toString(taxes));
         editor.apply();
-
-        //TextView status = (TextView) findViewById(R.id.submit_status);          // define which object we refer to
-        //status.setText(business_name + ": Submitted");
     }
 }
