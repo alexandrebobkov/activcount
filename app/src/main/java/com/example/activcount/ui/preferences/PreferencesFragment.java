@@ -1,4 +1,4 @@
-package com.example.activcount.ui.gallery;
+package com.example.activcount.ui.preferences;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,17 +13,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.activcount.R;
+import com.example.activcount.ui.gallery.PreferencesViewModel;
 
 public class PreferencesFragment extends Fragment {
 
-    private GalleryViewModel preferencesViewModel;
+    private PreferencesViewModel preferencesViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        preferencesViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
+        preferencesViewModel = ViewModelProviders.of(this).get(PreferencesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_preferences, container, false);
+        final TextView textView = root.findViewById(R.id.text_preferences);
         preferencesViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
