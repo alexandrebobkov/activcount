@@ -1,4 +1,4 @@
-package com.example.activcount.ui.gallery;
+package com.example.activcount.ui.preferences;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

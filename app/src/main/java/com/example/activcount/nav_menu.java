@@ -1,5 +1,6 @@
 package com.example.activcount;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,10 +21,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.TextView;
 
 public class nav_menu extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    // Persistent variables
+    public String biz_op_name, str_rev, str_coss, str_oe, str_intexp, str_inctax, str_status;
+    public SharedPreferences saved_info;
+    public static final String PREFS_NAME = "activcountVars";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,15 @@ public class nav_menu extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        saved_info  = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        biz_op_name = saved_info.getString("biz_oper_name", biz_op_name);
+        str_rev     = saved_info.getString("oper_rev", str_rev);
+        str_coss    = saved_info.getString("coss", str_coss);
+        str_oe      = saved_info.getString("oe", str_oe);
+        str_intexp  = saved_info.getString("intexp", str_intexp);
+        str_inctax  = saved_info.getString("inctax", str_inctax);
+
     }
 
     @Override

@@ -23,6 +23,11 @@
             android:label="Business Information"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".biz_prefs"
+            android:label="Business Preferences"
+            android:parentActivityName=".BsinessPreferences"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".about_credits" />
         <activity
             android:name=".AttachDoc"
